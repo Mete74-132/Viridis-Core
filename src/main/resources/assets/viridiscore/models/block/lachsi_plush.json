@@ -3,8 +3,8 @@
 	"credit": "Made by Mete",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "viridiscore:block/dok_plush",
-		"particle": "viridiscore:block/dok_plush"
+		"0": "viridiscore:block/lachsi_plush",
+		"particle": "viridiscore:block/lachsi_plush"
 	},
 	"elements": [
 		{
@@ -187,7 +187,7 @@
 	},
 	"groups": [
 		{
-			"name": "dok",
+			"name": "mete",
 			"origin": [8, 8, 8],
 			"scope": 0,
 			"color": 0,

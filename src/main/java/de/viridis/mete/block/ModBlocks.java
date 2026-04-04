@@ -4,94 +4,120 @@ import de.viridis.mete.ViridisCore;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.world.BlockView;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 
-public class ModBlocks {
+/**
+ * Central class for registering all custom blocks (and their block‑items) for the
+ * ViridisCore mod.
+ */
+public final class ModBlocks {
 
-    // Expanded outline (added 0.5 pixels on each side = 0.03125 normalized)
-    // Original: [3.5, 0, 5] to [12.5, 15, 14]
-    // Expanded: [3, 0, 4.5] to [13, 15, 14.5]
-    private static final VoxelShape SHAPE_NORTH = VoxelShapes.cuboid(
-            3f/16, 0f/16, 4.5f/16,
-            13f/16, 15.5f/16, 14.5f/16
+    // ------------------------------------------------------------------------
+    //  BLOCK DEFINITIONS
+    // ------------------------------------------------------------------------
+
+    public static final Block METE_PLUSH = registerBlock(
+            "mete_plush",
+            new MetePlushBlock(AbstractBlock.Settings.create()
+                    .strength(4.0f)
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
-    private static final VoxelShape SHAPE_SOUTH = VoxelShapes.cuboid(
-            3f/16, 0f/16, 1.5f/16,
-            13f/16, 15.5f/16, 11.5f/16
+    public static final Block DOK_PLUSH = registerBlock(
+            "dok_plush",
+            new MetePlushBlock(AbstractBlock.Settings.create()
+                    .strength(4.0f)
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
-    private static final VoxelShape SHAPE_EAST = VoxelShapes.cuboid(
-            1.5f/16, 0f/16, 3f/16,
-            11.5f/16, 15.5f/16, 13f/16
+    public static final Block BIEN_PLUSH = registerBlock(
+            "bien_plush",
+            new MetePlushBlock(AbstractBlock.Settings.create()
+                    .strength(4.0f)
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
-    private static final VoxelShape SHAPE_WEST = VoxelShapes.cuboid(
-            4.5f/16, 0f/16, 3f/16,
-            14.5f/16, 15.5f/16, 13f/16
+    public static final Block LACHSI_PLUSH = registerBlock(
+            "lachsi_plush",
+            new MetePlushBlock(AbstractBlock.Settings.create()
+                    .strength(4.0f)
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
-    public static final Block METE_PLUSH = registerBlock("mete_plush",
-            new Block(AbstractBlock.Settings.create().strength(4f).sounds(BlockSoundGroup.WOOL)) {
-                @Override
-                protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-                    builder.add(Properties.HORIZONTAL_FACING);
-                }
+    // ------------------------------------------------------------------------
+    //  INTERNAL REGISTRATION HELPERS
+    // ------------------------------------------------------------------------
 
-                @Override
-                public BlockState getPlacementState(ItemPlacementContext ctx) {
-                    return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
-                }
-
-                @Override
-                public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-                    return getShapeForDirection(state.get(Properties.HORIZONTAL_FACING));
-                }
-
-                @Override
-                public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-                    return getOutlineShape(state, world, pos, context);
-                }
-
-                private VoxelShape getShapeForDirection(Direction direction) {
-                    return switch (direction) {
-                        case SOUTH -> SHAPE_SOUTH;
-                        case EAST -> SHAPE_EAST;
-                        case WEST -> SHAPE_WEST;
-                        default -> SHAPE_NORTH;
-                    };
-                }
-            });
-
+    /**
+     * Registers the block *and* its corresponding {@link BlockItem}.
+     *
+     * @param name  registry name (without namespace)
+     * @param block the block instance
+     * @return the block that was registered (useful for static field init)
+     */
     private static Block registerBlock(String name, Block block) {
+        // Register the BlockItem first – the item registry expects the block to be
+        // already in the block registry, but Fabric tolerates the order as long as
+        // both calls happen during the same mod‑initialisation phase.
         registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, Identifier.of(ViridisCore.MOD_ID, name), block);
+
+        // Register the block itself.
+        return Registry.register(
+                Registries.BLOCK,
+                Identifier.of(ViridisCore.MOD_ID, name),
+                block
+        );
     }
 
+    /**
+     * Registers the {@link BlockItem} that represents {@code block} in the item
+     * registry. By default the block‑item will **not** have a creative‑tab
+     * group; we add it later via {@link ItemGroupEvents}.
+     *
+     * @param name  registry name (without namespace)
+     * @param block the associated block
+     */
     private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(ViridisCore.MOD_ID, name),
-                new BlockItem(block, new Item.Settings()));
+        Registry.register(
+                Registries.ITEM,
+                Identifier.of(ViridisCore.MOD_ID, name),
+                new BlockItem(block, new Item.Settings())
+        );
     }
 
+    // ------------------------------------------------------------------------
+    //  PUBLIC REGISTRATION ENTRYPOINT
+    // ------------------------------------------------------------------------
+
+    /**
+     * Called from {@link ViridisCore#onInitialize()}.
+     * <p>
+     * Adds the custom blocks to the {@code Ingredients} creative tab.
+     */
     public static void registerModBlocks() {
-        ViridisCore.LOGGER.info("Registering Mod Blocks for " + ViridisCore.MOD_ID);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries ->
-                entries.add(ModBlocks.METE_PLUSH));
+        ViridisCore.LOGGER.info("Registering Mod Blocks for {}", ViridisCore.MOD_ID);
+
+        // The lambda **must** contain both add‑calls inside its body.
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+                .register(entries -> {
+                    entries.add(METE_PLUSH);
+                    entries.add(DOK_PLUSH);
+                    entries.add(BIEN_PLUSH);
+                    entries.add(LACHSI_PLUSH);
+                });
+    }
+
+    // ------------------------------------------------------------------------
+    //  PRIVATE CONSTRUCTOR – utility class
+    // ------------------------------------------------------------------------
+
+    private ModBlocks() {
+        // Prevent instantiation
     }
 }
