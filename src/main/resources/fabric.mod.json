@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "viridiscore",
+	"version": "${version}",
+	"name": "Viridis Core",
+	"description": "This is the Core mod of the Wathe Viridis modpack",
+	"authors": [
+		"Mete74_ay, Mete74-132 (github)"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/Mete74-132/Viridis-Core"
+	},
+	"license": "Apache 2.0",
+	"icon": "assets/viridiscore/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"de.viridis.mete.ViridisCore"
+		],
+		"fabric-datagen": [
+			"de.viridis.mete.ViridisCoreDataGenerator"
+		],
+		"client": [
+			"de.viridis.mete.ViridisCoreClient"
+		]
+	},
+	"mixins": [
+		"viridiscore.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.6",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
