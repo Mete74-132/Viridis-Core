@@ -1,9 +1,9 @@
 package de.viridis.mete.block;
 
+import com.mojang.serialization.MapCodec;
 import de.viridis.mete.ViridisCore;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -15,7 +15,12 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
     public static final Block METE_PLUSH = registerBlock("mete_plush",
-            new Block(AbstractBlock.Settings.create().strength(4f).sounds(BlockSoundGroup.WOOL)));
+            new HorizontalFacingBlock(AbstractBlock.Settings.create().strength(4f).sounds(BlockSoundGroup.WOOL)) {
+                @Override
+                protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+                    return null;
+                }
+            });
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

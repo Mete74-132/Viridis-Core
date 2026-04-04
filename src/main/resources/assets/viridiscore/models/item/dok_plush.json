@@ -1,6 +1,3 @@
 {
-  "parent": "viridiscore:block/dok_plush",
-  "textures": {
-    "layer0": "ViridisCore:item/dok_plush"
-  }
+  "parent": "viridiscore:block/dok_plush"
 }

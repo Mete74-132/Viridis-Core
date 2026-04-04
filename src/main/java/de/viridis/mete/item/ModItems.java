@@ -22,8 +22,6 @@ public class ModItems {
         ViridisCore.LOGGER.info("Registering Mod Items for " + ViridisCore.MOD_ID);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.add(METE_PLUSH);
-            entries.add(DOK_PLUSH);
         });
     }
 }
