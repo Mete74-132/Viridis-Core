@@ -1,0 +1,6 @@
+{
+  "parent": "viridiscore:block/mete_plush",
+  "textures": {
+    "layer0": "ViridisCore:item/mete_plush"
+  }
+}
