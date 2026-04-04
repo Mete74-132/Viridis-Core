@@ -1,6 +1,8 @@
 {
   "variants": {
-    "facing=north": {
+    "": { "model": "viridis_core:block/mete_plush", "render_type": "cutout"
+    },
+"facing=north": {
       "model": "viridiscore:block/mete_plush"
     },
     "facing=south": {
