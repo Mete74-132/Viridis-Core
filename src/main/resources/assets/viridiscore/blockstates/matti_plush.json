@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "viridiscore:block/matti_plush"
+    },
+    "facing=south": {
+      "model": "viridiscore:block/matti_plush",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "viridiscore:block/matti_plush",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "viridiscore:block/matti_plush",
+      "y": 270
+    }
+  }
+}

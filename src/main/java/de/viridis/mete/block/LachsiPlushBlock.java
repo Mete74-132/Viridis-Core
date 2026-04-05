@@ -18,17 +18,14 @@ public class LachsiPlushBlock extends Block {
             3f/16, 0f/16, 4.5f/16,
             13f/16, 15.5f/16, 14.5f/16
     );
-
     private static final VoxelShape SHAPE_SOUTH = VoxelShapes.cuboid(
             3f/16, 0f/16, 1.5f/16,
             13f/16, 15.5f/16, 11.5f/16
     );
-
     private static final VoxelShape SHAPE_EAST = VoxelShapes.cuboid(
             1.5f/16, 0f/16, 3f/16,
             11.5f/16, 15.5f/16, 13f/16
     );
-
     private static final VoxelShape SHAPE_WEST = VoxelShapes.cuboid(
             4.5f/16, 0f/16, 3f/16,
             14.5f/16, 15.5f/16, 13f/16
@@ -42,22 +39,18 @@ public class LachsiPlushBlock extends Block {
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(Properties.HORIZONTAL_FACING);
     }
-
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState().with(Properties.HORIZONTAL_FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
-
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return getShapeForDirection(state.get(Properties.HORIZONTAL_FACING));
     }
-
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return getOutlineShape(state, world, pos, context);
     }
-
     private VoxelShape getShapeForDirection(Direction direction) {
         return switch (direction) {
             case SOUTH -> SHAPE_SOUTH;

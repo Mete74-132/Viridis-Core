@@ -26,28 +26,40 @@ public final class ModBlocks {
             "mete_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
                     .strength(4.0f)
-                    .sounds(BlockSoundGroup.WOOL))
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque())
     );
 
     public static final Block DOK_PLUSH = registerBlock(
             "dok_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
-                    .strength(4.0f)
-                    .sounds(BlockSoundGroup.WOOL))
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque())
     );
 
     public static final Block BIEN_PLUSH = registerBlock(
             "bien_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
-                    .strength(4.0f)
-                    .sounds(BlockSoundGroup.WOOL))
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque())
     );
 
     public static final Block LACHSI_PLUSH = registerBlock(
             "lachsi_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
-                    .strength(4.0f)
-                    .sounds(BlockSoundGroup.WOOL))
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque())
+    );
+
+    public static final Block MATTI_PLUSH = registerBlock(
+            "matti_plush",
+            new MetePlushBlock(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL)
+                    .nonOpaque())
     );
 
     // ------------------------------------------------------------------------
@@ -102,22 +114,4 @@ public final class ModBlocks {
      */
     public static void registerModBlocks() {
         ViridisCore.LOGGER.info("Registering Mod Blocks for {}", ViridisCore.MOD_ID);
-
-        // The lambda **must** contain both add‑calls inside its body.
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
-                .register(entries -> {
-                    entries.add(METE_PLUSH);
-                    entries.add(DOK_PLUSH);
-                    entries.add(BIEN_PLUSH);
-                    entries.add(LACHSI_PLUSH);
-                });
-    }
-
-    // ------------------------------------------------------------------------
-    //  PRIVATE CONSTRUCTOR – utility class
-    // ------------------------------------------------------------------------
-
-    private ModBlocks() {
-        // Prevent instantiation
-    }
-}
+    }}

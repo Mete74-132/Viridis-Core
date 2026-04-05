@@ -1,6 +1,7 @@
 package de.viridis.mete;
 
 import de.viridis.mete.block.ModBlocks;
+import de.viridis.mete.item.ModItemGroups;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -12,6 +13,8 @@ public class ViridisCore implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItemGroups.registerItemGroups();
+
 		ModBlocks.registerModBlocks();
 	}
 }
