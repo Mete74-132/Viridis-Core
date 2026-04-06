@@ -5,6 +5,12 @@
       "viridiscore:mete_plush"
     ]
   },
+  "dok_plush": {
+    "subtitle": "sounds.viridis.dok_plush",
+    "sounds": [
+      "viridiscore:dok_plush"
+    ]
+  },
   "lachsi_plush": {
     "subtitle": "sounds.viridis.lachsi_plush",
     "sounds": [
@@ -15,12 +21,6 @@
     "subtitle": "sounds.viridis.bien_plush",
     "sounds": [
       "viridiscore:bien_plush"
-    ]
-  },
-  "dok_plush": {
-    "subtitle": "sounds.viridis.dok_plush",
-    "sounds": [
-      "viridiscore:dok_plush"
     ]
   },
   "matti_plush": {

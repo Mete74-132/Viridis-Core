@@ -1,5 +1,8 @@
 package de.viridis.mete.block;
 
+import de.viridis.mete.block.custom.BienPlushBlock;
+import de.viridis.mete.block.custom.DokPlushBlock;
+import de.viridis.mete.block.custom.LachsiPlushBlock;
 import de.viridis.mete.block.custom.MetePlushBlock;
 import de.viridis.mete.sound.ModSounds;
 import de.viridis.mete.ViridisCore;
@@ -33,21 +36,21 @@ public final class ModBlocks {
 
     public static final Block DOK_PLUSH = registerBlock(
             "dok_plush",
-            new MetePlushBlock(AbstractBlock.Settings.create()
+            new DokPlushBlock(AbstractBlock.Settings.create()
                     .strength(0.5f)
                     .sounds(BlockSoundGroup.WOOL))
     );
 
     public static final Block BIEN_PLUSH = registerBlock(
             "bien_plush",
-            new MetePlushBlock(AbstractBlock.Settings.create()
+            new BienPlushBlock(AbstractBlock.Settings.create()
                     .strength(0.5f)
                     .sounds(BlockSoundGroup.WOOL))
     );
 
     public static final Block LACHSI_PLUSH = registerBlock(
             "lachsi_plush",
-            new MetePlushBlock(AbstractBlock.Settings.create()
+            new LachsiPlushBlock(AbstractBlock.Settings.create()
                     .strength(0.5f)
                     .sounds(BlockSoundGroup.WOOL))
     );
