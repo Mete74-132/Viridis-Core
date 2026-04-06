@@ -23,7 +23,7 @@ public class DokPlushBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
                                  BlockHitResult hit) {
-        world.playSound(player, pos, ModSounds.DOK_PLUSH, SoundCategory.BLOCKS, 1f, 1f);
+        world.playSound(player, pos, ModSounds.DOK_PLUSH, SoundCategory.BLOCKS, 0.5f, 1f);
         return ActionResult.SUCCESS;
     }
 
