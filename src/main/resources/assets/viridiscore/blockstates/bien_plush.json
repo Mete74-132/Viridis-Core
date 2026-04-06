@@ -1,4 +1,5 @@
 {
+  "ambientocclusion": "false",
   "variants": {
     "facing=north": {
       "model": "viridiscore:block/bien_plush"

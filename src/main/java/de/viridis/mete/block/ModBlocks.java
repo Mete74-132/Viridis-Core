@@ -1,12 +1,14 @@
 package de.viridis.mete.block;
 
+import de.viridis.mete.block.custom.MetePlushBlock;
+import de.viridis.mete.sound.ModSounds;
 import de.viridis.mete.ViridisCore;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.client.sound.Sound;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
@@ -26,40 +28,35 @@ public final class ModBlocks {
             "mete_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
                     .strength(4.0f)
-                    .sounds(BlockSoundGroup.WOOL)
-                    .nonOpaque())
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
     public static final Block DOK_PLUSH = registerBlock(
             "dok_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
                     .strength(0.5f)
-                    .sounds(BlockSoundGroup.WOOL)
-                    .nonOpaque())
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
     public static final Block BIEN_PLUSH = registerBlock(
             "bien_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
                     .strength(0.5f)
-                    .sounds(BlockSoundGroup.WOOL)
-                    .nonOpaque())
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
     public static final Block LACHSI_PLUSH = registerBlock(
             "lachsi_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
                     .strength(0.5f)
-                    .sounds(BlockSoundGroup.WOOL)
-                    .nonOpaque())
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
     public static final Block MATTI_PLUSH = registerBlock(
             "matti_plush",
             new MetePlushBlock(AbstractBlock.Settings.create()
                     .strength(0.5f)
-                    .sounds(BlockSoundGroup.WOOL)
-                    .nonOpaque())
+                    .sounds(BlockSoundGroup.WOOL))
     );
 
     // ------------------------------------------------------------------------
@@ -114,4 +111,5 @@ public final class ModBlocks {
      */
     public static void registerModBlocks() {
         ViridisCore.LOGGER.info("Registering Mod Blocks for {}", ViridisCore.MOD_ID);
-    }}
+    }
+}

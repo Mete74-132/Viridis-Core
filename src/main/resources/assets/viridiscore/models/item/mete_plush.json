@@ -1,3 +1,7 @@
 {
-  "parent": "viridiscore:block/mete_plush"
+  "parent": "viridiscore:block/mete_plush",
+  "textures": {
+    "all": "viridis_core:block/mete_plush"
+  },
+  "render_type": "translucent"
 }

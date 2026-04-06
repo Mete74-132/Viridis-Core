@@ -1,4 +1,4 @@
-package de.viridis.mete.block;
+package de.viridis.mete.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

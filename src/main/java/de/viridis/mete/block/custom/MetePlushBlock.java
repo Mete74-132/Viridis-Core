@@ -1,18 +1,28 @@
-package de.viridis.mete.block;
+package de.viridis.mete.block.custom;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+import de.viridis.mete.sound.ModSounds;
 
-public class LachsiPlushBlock extends Block {
+import java.util.List;
+
+public class MetePlushBlock extends Block {
 
     private static final VoxelShape SHAPE_NORTH = VoxelShapes.cuboid(
             3f/16, 0f/16, 4.5f/16,
@@ -30,10 +40,17 @@ public class LachsiPlushBlock extends Block {
             4.5f/16, 0f/16, 3f/16,
             14.5f/16, 15.5f/16, 13f/16
     );
+    private MetePlushBlock SoundEvents;
 
-    public LachsiPlushBlock(Settings settings) {
-        super(settings);
+    public MetePlushBlock(AbstractBlock.Settings settings) {super(settings);}
+
+    @Override
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
+                                 BlockHitResult hit) {
+        world.playSound(player, pos, SoundEvents.M, SoundCategory.PLUSH, 1f, 1f);
+        return ActionResult.SUCCESS;
     }
+
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

@@ -1,4 +1,4 @@
-package de.viridis.mete.block;
+package de.viridis.mete.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -12,7 +12,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
-public class BienPlushBlock extends Block {
+public class LachsiPlushBlock extends Block {
 
     private static final VoxelShape SHAPE_NORTH = VoxelShapes.cuboid(
             3f/16, 0f/16, 4.5f/16,
@@ -31,9 +31,7 @@ public class BienPlushBlock extends Block {
             14.5f/16, 15.5f/16, 13f/16
     );
 
-    public BienPlushBlock(Settings settings) {
-        super(settings);
-    }
+    public LachsiPlushBlock(Settings settings) {super(settings);}
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
