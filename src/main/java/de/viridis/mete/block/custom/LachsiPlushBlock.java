@@ -1,16 +1,22 @@
 package de.viridis.mete.block.custom;
 
+import de.viridis.mete.sound.ModSounds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.sound.SoundCategory;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 
 public class LachsiPlushBlock extends Block {
 
@@ -30,6 +36,13 @@ public class LachsiPlushBlock extends Block {
             4.5f/16, 0f/16, 3f/16,
             14.5f/16, 15.5f/16, 13f/16
     );
+
+    @Override
+    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
+                                 BlockHitResult hit) {
+        world.playSound(player, pos, ModSounds.LACHSI_PLUSH, SoundCategory.BLOCKS, 0.5f, 1f);
+        return ActionResult.SUCCESS;
+    }
 
     public LachsiPlushBlock(Settings settings) {super(settings);}
 

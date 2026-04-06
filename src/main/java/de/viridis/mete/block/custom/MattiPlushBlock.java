@@ -18,7 +18,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 
-public class BienPlushBlock extends Block {
+public class MattiPlushBlock extends Block {
 
     private static final VoxelShape SHAPE_NORTH = VoxelShapes.cuboid(
             3f/16, 0f/16, 4.5f/16,
@@ -37,17 +37,14 @@ public class BienPlushBlock extends Block {
             14.5f/16, 15.5f/16, 13f/16
     );
 
-    public BienPlushBlock(Settings settings) {
-        super(settings);
-    }
+    public MattiPlushBlock(Settings settings) {super(settings);}
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
                                  BlockHitResult hit) {
-        world.playSound(player, pos, ModSounds.BIEN_PLUSH, SoundCategory.BLOCKS, 0.5f, 1f);
+        world.playSound(player, pos, ModSounds.MATTI_PLUSH, SoundCategory.BLOCKS, 0.5f, 1f);
         return ActionResult.SUCCESS;
     }
-
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(Properties.HORIZONTAL_FACING);
