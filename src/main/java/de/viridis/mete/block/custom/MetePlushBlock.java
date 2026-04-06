@@ -44,12 +44,12 @@ public class MetePlushBlock extends Block {
 
     public MetePlushBlock(AbstractBlock.Settings settings) {super(settings);}
 
-    @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
-                                 BlockHitResult hit) {
-        world.playSound(player, pos, SoundEvents.M, SoundCategory.PLUSH, 1f, 1f);
-        return ActionResult.SUCCESS;
-    }
+   // @Override
+   // protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
+    //                              BlockHitResult hit) {
+    //     world.playSound(player, pos, SoundEvents.M, SoundCategory.PLUSH, 1f, 1f);
+    //     return ActionResult.SUCCESS;
+    // }
 
 
     @Override
