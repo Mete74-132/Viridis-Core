@@ -20,7 +20,7 @@ import net.minecraft.world.World;
 
 public class DokPlushBlock extends Block {
 
-    //Bester Plush ever nicht wahr Mete?
+    //Bester Plush ever nicht wahr Mete? Jajajaja super duper
 
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
