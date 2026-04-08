@@ -2,31 +2,36 @@
   "mete_plush": {
     "subtitle": "sounds.viridis.mete_plush",
     "sounds": [
-      "viridiscore:mete_plush"
+      "viridiscore:mete_plush",
+      "viridiscore:honk"
     ]
   },
   "dok_plush": {
     "subtitle": "sounds.viridis.dok_plush",
     "sounds": [
-      "viridiscore:dok_plush"
+      "viridiscore:dok_plush",
+      "viridiscore:honk"
     ]
   },
   "lachsi_plush": {
     "subtitle": "sounds.viridis.lachsi_plush",
     "sounds": [
-      "viridiscore:lachsi_plush"
+      "viridiscore:lachsi_plush",
+      "viridiscore:honk"
     ]
   },
   "bien_plush": {
     "subtitle": "sounds.viridis.bien_plush",
     "sounds": [
-      "viridiscore:bien_plush"
+      "viridiscore:bien_plush",
+      "viridiscore:honk"
     ]
   },
   "matti_plush": {
     "subtitle": "sounds.viridis.matti_plush",
     "sounds": [
-      "viridiscore:matti_plush"
+      "viridiscore:matti_plush",
+      "viridiscore:honk"
     ]
   }
 }

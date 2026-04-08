@@ -12,6 +12,7 @@ public class ModSounds {
     public static final SoundEvent DOK_PLUSH = registerSoundEvent("dok_plush");
     public static final SoundEvent BIEN_PLUSH = registerSoundEvent("bien_plush");
     public static final SoundEvent MATTI_PLUSH = registerSoundEvent("matti_plush");
+    public static final SoundEvent HONK = registerSoundEvent("honk");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(ViridisCore.MOD_ID, name);
