@@ -33,5 +33,12 @@
       "viridiscore:matti_plush",
       "viridiscore:honk"
     ]
+  },
+  "sodog_plush": {
+    "subtitle": "sounds.viridis.sodog_plush",
+    "sounds": [
+      "viridiscore:sodog_plush",
+      "viridiscore:honk"
+    ]
   }
 }

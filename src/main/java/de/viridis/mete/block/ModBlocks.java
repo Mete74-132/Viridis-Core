@@ -55,6 +55,13 @@ public final class ModBlocks {
                     .sounds(BlockSoundGroup.WOOL),
                     ModSounds.MATTI_PLUSH));
 
+    public static final Block SODOG_PLUSH = registerBlock(
+            "sodog_plush",
+            new PlushBlockBase(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL),
+                    ModSounds.MATTI_PLUSH));
+
     /* --------------------------------------------------------------------- */
     /*  INTERNAL REGISTRATION HELPERS                                        */
     /* --------------------------------------------------------------------- */

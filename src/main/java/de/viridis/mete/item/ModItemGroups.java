@@ -23,6 +23,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BIEN_PLUSH);
                         entries.add(ModBlocks.LACHSI_PLUSH);
                         entries.add(ModBlocks.MATTI_PLUSH);
+                        entries.add(ModBlocks.SODOG_PLUSH);
                     }).build());
 
 
