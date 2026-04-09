@@ -1,6 +1,7 @@
 package de.viridis.mete.sound;
 
 import de.viridis.mete.ViridisCore;
+import net.minecraft.client.sound.Sound;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.SoundEvent;
@@ -13,6 +14,7 @@ public class ModSounds {
     public static final SoundEvent BIEN_PLUSH = registerSoundEvent("bien_plush");
     public static final SoundEvent MATTI_PLUSH = registerSoundEvent("matti_plush");
     public static final SoundEvent HONK = registerSoundEvent("honk");
+    public static final SoundEvent SODOG_PLUSH = registerSoundEvent("sodog_plush");
 
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(ViridisCore.MOD_ID, name);

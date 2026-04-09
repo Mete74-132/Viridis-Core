@@ -60,11 +60,8 @@ public final class ModBlocks {
             new PlushBlockBase(AbstractBlock.Settings.create()
                     .strength(0.5f)
                     .sounds(BlockSoundGroup.WOOL),
-                    ModSounds.MATTI_PLUSH));
+                    ModSounds.SODOG_PLUSH));
 
-    /* --------------------------------------------------------------------- */
-    /*  INTERNAL REGISTRATION HELPERS                                        */
-    /* --------------------------------------------------------------------- */
     private static Block registerBlock(String name, Block block) {
         // Register the BlockItem first – Fabric tolerates this order during init.
         registerBlockItem(name, block);
