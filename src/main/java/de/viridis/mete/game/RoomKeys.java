@@ -6,6 +6,8 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.WorldChunk;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.TreeMap;
@@ -16,6 +18,7 @@ import java.util.regex.Pattern;
 public final class RoomKeys {
     private static final Pattern ROOM = Pattern.compile("Room (\\d+)");
     private static int roomCount = 0;
+    private static final Logger LOGGER = LoggerFactory.getLogger("RoomKeys");
 
     private RoomKeys() {
     }
@@ -42,6 +45,7 @@ public final class RoomKeys {
             }
         }
         roomCount = max;
+        LOGGER.info("Zimmerschlüssel: {} Abteile mit Tür gefunden {}", doors.size(), doors);
     }
 
     public static int roomCount(int fallback) {
