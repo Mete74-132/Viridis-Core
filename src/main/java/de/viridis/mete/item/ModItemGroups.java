@@ -24,6 +24,12 @@ public class ModItemGroups {
                         entries.add(ModBlocks.LACHSI_PLUSH);
                         entries.add(ModBlocks.MATTI_PLUSH);
                         entries.add(ModBlocks.SODOG_PLUSH);
+                        entries.add(ModBlocks.COVER_PLUSH);
+                        entries.add(ModBlocks.FLOWERY_PLUSH);
+                        entries.add(ModBlocks.MADDIE_PLUSH);
+                        entries.add(ModBlocks.TRS_PLUSH);
+                        entries.add(ModBlocks.VERITY_PLUSH);
+                        entries.add(ModBlocks.ZOCKER_PLUSH);
                     }).build());
 
 

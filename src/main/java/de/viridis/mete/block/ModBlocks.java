@@ -11,15 +11,9 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
-/**
- * Central class for registering all custom blocks (and their block‑items) for
- * the ViridisCore mod.
- */
+
 public final class ModBlocks {
 
-    /* --------------------------------------------------------------------- */
-    /*  BLOCK DEFINITIONS – ONE LINE PER PLUSH                               */
-    /* --------------------------------------------------------------------- */
     public static final Block METE_PLUSH = registerBlock(
             "mete_plush",
             new PlushBlockBase(AbstractBlock.Settings.create()
@@ -62,11 +56,51 @@ public final class ModBlocks {
                     .sounds(BlockSoundGroup.WOOL),
                     ModSounds.SODOG_PLUSH));
 
+    public static final Block COVER_PLUSH = registerBlock(
+            "cover_plush",
+            new PlushBlockBase(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL),
+                    ModSounds.COVER_PLUSH));
+
+    public static final Block FLOWERY_PLUSH = registerBlock(
+            "flowery_plush",
+            new PlushBlockBase(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL),
+                    ModSounds.FLOWERY_PLUSH));
+
+    public static final Block MADDIE_PLUSH = registerBlock(
+            "maddie_plush",
+            new PlushBlockBase(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL),
+                    ModSounds.MADDIE_PLUSH));
+
+    public static final Block TRS_PLUSH = registerBlock(
+            "trs_plush",
+            new PlushBlockBase(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL),
+                    ModSounds.TRS_PLUSH));
+
+    public static final Block VERITY_PLUSH = registerBlock(
+            "verity_plush",
+            new PlushBlockBase(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL),
+                    ModSounds.VERITY_PLUSH));
+
+    public static final Block ZOCKER_PLUSH = registerBlock(
+            "zocker_plush",
+            new PlushBlockBase(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.WOOL),
+                    ModSounds.ZOCKER_PLUSH));
+
     private static Block registerBlock(String name, Block block) {
-        // Register the BlockItem first – Fabric tolerates this order during init.
         registerBlockItem(name, block);
 
-        // Register the block itself.
         return Registry.register(
                 Registries.BLOCK,
                 Identifier.of(ViridisCore.MOD_ID, name),
@@ -80,19 +114,7 @@ public final class ModBlocks {
                 new BlockItem(block, new Item.Settings()));
     }
 
-    /* --------------------------------------------------------------------- */
-    /*  PUBLIC REGISTRATION ENTRYPOINT                                        */
-    /* --------------------------------------------------------------------- */
-    /** Called from {@link ViridisCore#onInitialize()}. */
     public static void registerModBlocks() {
-        // Example: add the blocks to a custom creative tab if you have one.
-        // ItemGroupEvents.modifyEntriesEvent(ModItemGroup.MY_TAB).register(content -> {
-        //     content.add(METE_PLUSH);
-        //     content.add(DOK_PLUSH);
-        //     content.add(BIEN_PLUSH);
-        //     content.add(LACHSI_PLUSH);
-        //     content.add(MATTI_PLUSH);
-        // });
-        ViridisCore.LOGGER.info("Registered {} plush blocks", 5);
+
     }
 }

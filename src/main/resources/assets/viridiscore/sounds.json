@@ -2,43 +2,73 @@
   "mete_plush": {
     "subtitle": "sounds.viridis.mete_plush",
     "sounds": [
-      "viridiscore:mete_plush",
-      "viridiscore:honk"
+      "viridiscore:mete_plush"
     ]
   },
   "dok_plush": {
     "subtitle": "sounds.viridis.dok_plush",
     "sounds": [
-      "viridiscore:dok_plush",
-      "viridiscore:honk"
+      "viridiscore:dok_plush"
     ]
   },
   "lachsi_plush": {
     "subtitle": "sounds.viridis.lachsi_plush",
     "sounds": [
-      "viridiscore:lachsi_plush",
-      "viridiscore:honk"
+      "viridiscore:lachsi_plush"
     ]
   },
   "bien_plush": {
     "subtitle": "sounds.viridis.bien_plush",
     "sounds": [
-      "viridiscore:bien_plush",
-      "viridiscore:honk"
+      "viridiscore:bien_plush"
     ]
   },
   "matti_plush": {
     "subtitle": "sounds.viridis.matti_plush",
     "sounds": [
-      "viridiscore:matti_plush",
-      "viridiscore:honk"
+      "viridiscore:matti_plush"
+    ]
+  },
+  "cover_plush": {
+    "subtitle": "sounds.viridis.cover_plush",
+    "sounds": [
+      "viridiscore:cover_plush"
+    ]
+  },
+  "flowery_plush": {
+    "subtitle": "sounds.viridis.flowery_plush",
+    "sounds": [
+      "viridiscore:flowery_plush"
+    ]
+  },
+  "maddie_plush": {
+    "subtitle": "sounds.viridis.maddie_plush",
+    "sounds": [
+      "viridiscore:maddie_plush"
+    ]
+  },
+  "trs_plush": {
+    "subtitle": "sounds.viridis.trs_plush",
+    "sounds": [
+      "viridiscore:trs_plush"
+    ]
+  },
+  "verity_plush": {
+    "subtitle": "sounds.viridis.verity_plush",
+    "sounds": [
+      "viridiscore:verity_plush"
+    ]
+  },
+  "zocker_plush": {
+    "subtitle": "sounds.viridis.zocker_plush",
+    "sounds": [
+      "viridiscore:zocker_plush"
     ]
   },
   "sodog_plush": {
     "subtitle": "sounds.viridis.sodog_plush",
     "sounds": [
-      "viridiscore:sodog_plush",
-      "viridiscore:honk"
+      "viridiscore:sodog_plush"
     ]
   }
 }
