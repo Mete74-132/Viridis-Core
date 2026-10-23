@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.viridis.mete.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "HarpyExpressTrainMapEffectMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

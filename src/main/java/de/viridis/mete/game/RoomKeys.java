@@ -6,13 +6,11 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.WorldChunk;
-import de.viridis.mete.game.GameUtil;
 
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 
 
 public final class RoomKeys {
@@ -21,7 +19,6 @@ public final class RoomKeys {
 
     private RoomKeys() {
     }
-
 
     public static void scan(ServerWorld world) {
         Box area = GameUtil.playArea(world);
