@@ -26,6 +26,7 @@
 		]
 	},
 	"mixins": [
+		"watheviridis.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.18.6",
