@@ -18,7 +18,6 @@ import java.util.regex.Pattern;
 public final class RoomKeys {
     private static final Pattern ROOM = Pattern.compile("Room (\\d+)");
     private static int roomCount = 0;
-    private static final Logger LOGGER = LoggerFactory.getLogger("RoomKeys");
 
     private RoomKeys() {
     }
@@ -45,7 +44,6 @@ public final class RoomKeys {
             }
         }
         roomCount = max;
-        LOGGER.info("Zimmerschlüssel: {} Abteile mit Tür gefunden {}", doors.size(), doors);
     }
 
     public static int roomCount(int fallback) {
