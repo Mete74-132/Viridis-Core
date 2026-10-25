@@ -6,9 +6,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.chunk.WorldChunk;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
@@ -18,6 +19,7 @@ import java.util.regex.Pattern;
 public final class RoomKeys {
     private static final Pattern ROOM = Pattern.compile("Room (\\d+)");
     private static int roomCount = 0;
+    private static List<Integer> shuffledRooms = List.of();
 
     private RoomKeys() {
     }
@@ -44,9 +46,18 @@ public final class RoomKeys {
             }
         }
         roomCount = max;
+
+        List<Integer> rooms = new ArrayList<>(max);
+        for (int i = 1; i <= max; i++) rooms.add(i);
+        Collections.shuffle(rooms);
+        shuffledRooms = rooms;
     }
 
     public static int roomCount(int fallback) {
         return roomCount > 0 ? roomCount : fallback;
+    }
+    public static int getShuffledRoom(int sequential) {
+        if (sequential < 1 || sequential > shuffledRooms.size()) return sequential;
+        return shuffledRooms.get(sequential - 1);
     }
 }
